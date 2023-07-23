@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="style.css" rel="stylesheet" />
+
+    <title>Company</title>
+  </head>
+  <body>
+    <section id="navbar">
+      <ul>
+        <li style="float: left">
+          <a href="#company"><b> Company </b></a>
+        </li>
+
+        <li style="float: right"><a href="#form">CONTACT</a></li>
+        <li style="float: right"><a href="#team">OUR TEAM</a></li>
+        <li style="float: right"><a href="#work">OUR WORK</a></li>
+
+        <li style="float: right" class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">ABOUT</a>
+          <div class="dropdown-content">
+            <a href="#">HISTORY</a>
+            <a href="#">VISION MISSION</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 2</div>
+        <img src="images/bg.jpg" style="width:100%">
+        <div class="text">THIS IS A PLACE WHERE TECHNOLOGY & CREATIVITY FUSED INTO DIGITAL CHEMISTRY</div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 2</div>
+        <img src="images/about-bg.jpg" style="width:100%">
+        <div class="text">WE DONT HAVE THE BEST BUT WE HAVE THE GREATEST TEAM</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+
+    <section id="content">
+      <p>OUR VALUES</p>
+      <div class="grid-container">
+        <div class="fe-box">
+          <img src="images/lightbulb-o.png" alt="" />
+          <div class="desc">
+            <h5>INNOVATIVE</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit similique eum itaque facere temporibus dolores.</p>
+          </div>
+        </div>
+        <div class="fe-box">
+          <img src="images/bank.png" alt="" />
+          <div class="desc">
+            <h5>LOYALTY</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit similique eum itaque facere temporibus dolores.</p>
+          </div>
+        </div>
+        <div class="fe-box">
+          <img src="images/balance-scale.png" alt="" />
+          <div class="desc">
+            <h5>RESPESCT</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit similique eum itaque facere temporibus dolores.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="form">
+      <form>
+        <p>CONTACT US</p>
+        <label for="name">Name <input id="name" name="name" type="text" required  /></label> 
+        <label for="email">Email <input id="email" name="email" type="email" required /></label>
+        <label for="bio"
+          >Message
+          <textarea id="bio" name="bio" rows="3" cols="30"></textarea>
+        </label>
+        <input type="submit" value="SUBMIT" />
+      </form>
+    </section>
+
+    <section id="footer">
+      <footer>
+        <div class="footer-content">
+          <h6">Copyright ©2016. PT Company</h6>
+          <div class="logo-container">
+            <img src="images/facebook-official.png" alt="Logo 1" class="logo" />
+            <img src="images/twitter.png" alt="Logo 2" class="logo" />
+          </div>
+        </div>
+      </footer>
+    </section> 
+
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if(n > slides.length) {
+          slideIndex = 1
+        }
+        if(n < 1) {
+          slideIndex = slides.length
+        }
+        for(i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for(i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+  </body>
+</html>
